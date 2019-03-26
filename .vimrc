@@ -14,24 +14,20 @@ Plugin 'gmarik/Vundle.vim'
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 Plugin 'jnurmine/Zenburn'
 Plugin 'tmhedberg/SimpylFold'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'vim-scripts/indentpython.vim'
-"Plugin 'nvie/vim-flake8'
-"Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'bling/vim-bufferline'
-"Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'christoomey/vim-tmux-navigator'
-"Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-fugitive'
-"Plugin 'Yggdroot/indentLine'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'jremmen/vim-ripgrep'
-Plugin 'Valloric/YouCompleteMe'
 "Plugin 'vim-latex/vim-latex'
+Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'yanqd0/snippets-for-vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -53,11 +49,12 @@ au BufNewFile,BufRead *.py
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
     \ set textwidth=79 |
-    \ set expandtab |
     \ set autoindent |
     \ set cindent |
     \ set fileformat=unix
+"\ set expandtab |
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+autocmd BufLeave,FocusLost * silent! wall
 set shiftwidth=2
 set autoindent 
 set cindent 
@@ -251,3 +248,21 @@ if has("cscope")
 
 endif
 set tw=0
+
+" UltiSnips
+let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnipsEditSplit="vertical"
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<c-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+let g:UltiSnipsSnippetsDir = "~/.vim/bundle/ultisnips/UltiSnips"
+let g:UltiSnipsSnippetsDirrectoris = ["~/.vim/bundle/ultisnips/UltiSnips", "UltiSnips"]
+
