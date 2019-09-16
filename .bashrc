@@ -91,7 +91,6 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias python='python3'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -137,7 +136,7 @@ function cd() {
   fi
 }
 
-display to use the Windows X-server listening on localhost:0.0
+#display to use the Windows X-server listening on localhost:0.0
 export DISPLAY=localhost:0.0
 # make rendering happen on the Windows side of things rather than Ubuntu
 export LIBGL_ALWAYS_INDIRECT=1
@@ -149,3 +148,11 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 ssh-add -K ~/.ssh/aimvl-farm.pem
 alias mnt='sudo mount -t nfs -o vers=4.0 11b5b8498ea-ffg31.eu-central-1.nas.aliyuncs.com:/ /mnt'
+alias ctags='/usr/local/bin/ctags'
+alias pip='pip3'
+alias python='python3.6'
+alias work='cd /mnt/workspace/agolbert'
+alias ctags='/usr/bin/ctags'
+export XDG_RUNTIME_DIR=""
+alias jnote='jupyter notebook --ip=0.0.0.0 --no-browser'
+alias gitlog='git log --oneline --abbrev-commit --all --graph --decorate'

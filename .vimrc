@@ -16,6 +16,7 @@ Plugin 'jnurmine/Zenburn'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -28,23 +29,32 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'yanqd0/snippets-for-vim'
 Plugin 'lervag/vimtex'
-"Plugin 'xuhdev/vim-latex-live-preview'
-
+Plugin 'tpope/vim-surround'
+Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " Enable folding
 set foldmethod=indent
+set foldnestmax=10
+set foldlevel=4
+
 "set foldlevel=99
 set number
 set clipboard=unnamed,unnamedplus
 set hls
 " Enable folding with the spacebar
-"nnoremap <space> za
+nnoremap <space> za
 :imap jk <Esc>
 
 let g:SimpylFold_docstring_preview=1
+let g:indentLine_color_term = 439
+let g:indentLine_setColors = 0
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_bgcolor_term = 202
+let g:indentLine_bgcolor_gui = '#FF5F00'
+
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -106,7 +116,6 @@ let g:indentLine_setColors=0
 
 let g:autopep8_max_line_length=100
 let g:autopep8_indent_size=4
-
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
@@ -267,20 +276,6 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-let g:UltiSnipsSnippetsDir = "~/.vim/bundle/ultisnips/UltiSnips"
+let g:UltiSnipsSnippetsDir = "~/.vim/bundle/snippets-for-vim/UltiSnips"
 let g:UltiSnipsSnippetsDirrectoris = ["~/.vim/bundle/ultisnips/UltiSnips", "UltiSnips"]
-
-" Latex
-let g:tex_flavor='latex'
-"let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_mode=0
-"set conceallevel=1
-"let g:tex_conceal='abdmg'
-
-"vim-latex-live-preview'
-"autocmd Filetype tex setl updatetime=1
-"let g:livepreview_previewer = 'open -a Preview'
-"let g:livepreview_previewer = 'evince'
-"let g:livepreview_engine = 'latexmk -pdf'
-"set spell spelllang=en_us
 
