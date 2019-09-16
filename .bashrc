@@ -142,3 +142,10 @@ export DISPLAY=localhost:0.0
 # make rendering happen on the Windows side of things rather than Ubuntu
 export LIBGL_ALWAYS_INDIRECT=1
 export BROWSER='/mnt/c/Program Files/Firefox/firefox.exe'
+alias farm='ssh a.golbert@192.168.227.80'
+alias sync='cd ~; unison  randomNAS_release ssh://root@192.168.227.80//home/a.golbert/Projects/randomNAS/randomNAS_release'
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+ssh-add -K ~/.ssh/aimvl-farm.pem
+alias mnt='sudo mount -t nfs -o vers=4.0 11b5b8498ea-ffg31.eu-central-1.nas.aliyuncs.com:/ /mnt'

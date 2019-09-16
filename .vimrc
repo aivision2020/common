@@ -27,6 +27,8 @@ Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'yanqd0/snippets-for-vim'
+Plugin 'lervag/vimtex'
+"Plugin 'xuhdev/vim-latex-live-preview'
 
 
 " All of your Plugins must be added before the following line
@@ -36,7 +38,7 @@ filetype plugin indent on    " required
 set foldmethod=indent
 "set foldlevel=99
 set number
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
 set hls
 " Enable folding with the spacebar
 "nnoremap <space> za
@@ -48,14 +50,14 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=79 |
     \ set autoindent |
     \ set cindent |
     \ set fileformat=unix
+"\ set textwidth=79 |
 "\ set expandtab |
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 autocmd BufLeave,FocusLost * silent! wall
-set shiftwidth=2
+set shiftwidth=4
 set autoindent 
 set cindent 
 set encoding=utf-8
@@ -102,7 +104,9 @@ let g:indentLine_setColors=0
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
 
-let g:autopep8_max_line_length=160
+let g:autopep8_max_line_length=100
+let g:autopep8_indent_size=4
+
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
@@ -265,4 +269,18 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 let g:UltiSnipsSnippetsDir = "~/.vim/bundle/ultisnips/UltiSnips"
 let g:UltiSnipsSnippetsDirrectoris = ["~/.vim/bundle/ultisnips/UltiSnips", "UltiSnips"]
+
+" Latex
+let g:tex_flavor='latex'
+"let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+"set conceallevel=1
+"let g:tex_conceal='abdmg'
+
+"vim-latex-live-preview'
+"autocmd Filetype tex setl updatetime=1
+"let g:livepreview_previewer = 'open -a Preview'
+"let g:livepreview_previewer = 'evince'
+"let g:livepreview_engine = 'latexmk -pdf'
+"set spell spelllang=en_us
 

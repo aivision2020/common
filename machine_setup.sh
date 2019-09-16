@@ -20,6 +20,9 @@ rigpgrep
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb  
 sudo dpkg -i ripgrep_0.10.0_amd64.deb  
 ```        
+
+use python3 to start virtualenv
+python -m venv <name>
 #apt install virtualenv
 #virtualenv -p python3 env1
 
