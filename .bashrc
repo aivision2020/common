@@ -146,7 +146,6 @@ alias sync='cd ~; unison  randomNAS_release ssh://root@192.168.227.80//home/a.go
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-ssh-add -K ~/.ssh/aimvl-farm.pem
 alias mnt='sudo mount -t nfs -o vers=4.0 11b5b8498ea-ffg31.eu-central-1.nas.aliyuncs.com:/ /mnt'
 alias ctags='/usr/local/bin/ctags'
 alias pip='pip3'
@@ -156,3 +155,7 @@ alias ctags='/usr/bin/ctags'
 export XDG_RUNTIME_DIR=""
 alias jnote='jupyter notebook --ip=0.0.0.0 --no-browser'
 alias gitlog='git log --oneline --abbrev-commit --all --graph --decorate'
+alias psmem='ps -o pid,user,%mem,command ax | sort -b -k3 -r'
+alias docker_test='docker-compose -f ./tests/docker-compose.yml up --build --exit-code-from darts'
+export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}$ 
+export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
