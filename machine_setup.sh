@@ -5,6 +5,7 @@ cp common/. .
 
 stuff I like to have. Not improtant for this project  
 vim. do this from home dir  
+
 ```
 sudo add-apt-repository ppa:jonathonf/vim  
 sudo apt update    
@@ -12,6 +13,14 @@ sudo apt install vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim  
 sudo apt install exuberant-ctags    
 ```
+
+python3.6
+```
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt-get install python3.6
+```
+
 get .vimrc and .tmux.conf from my git https://github.com/aivision2020/common.git  
 install YCM (follow git instructions)  
   
