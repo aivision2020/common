@@ -1,33 +1,28 @@
 git clone https://github.com/aivision2020/common.git
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-git clone https://github.com/aivision2020/OctSceneScan.git
-cp common/. .
 
 stuff I like to have. Not improtant for this project  
 vim. do this from home dir  
 
 ```
-sudo add-apt-repository ppa:jonathonf/vim  
-sudo apt update    
-sudo apt install vim    
+make sure you have python3 installed 
+make sure you have vim with python3
+sudo apt install vim-gtk    #(maybe there are other ways)
+
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim  
-sudo apt install exuberant-ctags    
-```
 
-python3.6
-```
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt-get update
-sudo apt-get install python3.6
-```
-
-get .vimrc and .tmux.conf from my git https://github.com/aivision2020/common.git  
 install YCM (follow git instructions)  
+```
+apt install build-essential cmake vim-nox python3-dev
+cd ~/.vim/bundle/YouCompleteMe
+python3 install.py --all
+```
   
-rigpgrep  
+nice tools rigpgrep  
 ```
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb  
 sudo dpkg -i ripgrep_0.10.0_amd64.deb  
+sudo apt install exuberant-ctags    
+sudo apt install fzf
 ```        
 
 use python3 to start virtualenv
@@ -38,12 +33,3 @@ python -m venv <name>
 vim +PluginInstall +qall   
 #or open vim and run :PlugginInstall
 
-pip install --upgrade pip
-cd OctSceneScan
-pip install -r requirments.txt
-
-
-when you get an address from vast.ai, change the last port to 8097. then locally connect to http://localhost:8080/ to see visdom
-
-ssh -p 13980 root@ssh5.vast.ai -L 8080:localhost:8097
-then connect to visdom (locally) in boweser http://localhost:8080/

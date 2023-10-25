@@ -122,7 +122,7 @@ function cd() {
   if [[ -z "$VIRTUAL_ENV" ]] ; then
     ## If env folder is found then activate the vitualenv
       if [[ -d ./venv ]] ; then
-        source ./venv/bin/activate
+# source ./venv/bin/activate  # commented out by conda initialize
 	export PYTHONPATH=$PYTHONPATH:$PWD
       fi
   else
@@ -159,3 +159,6 @@ alias psmem='ps -o pid,user,%mem,command ax | sort -b -k3 -r'
 alias docker_test='docker-compose -f ./tests/docker-compose.yml up --build --exit-code-from darts'
 export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}$ 
 export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+exportPROMPT_COMMAND='history-a;history-r'
+source /usr/share/doc/fzf/examples/key-bindings.bash
+
